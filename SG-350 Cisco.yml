@@ -1,0 +1,25 @@
+  GNU nano 4.8                                                                                   sh.yml                                                                                              - name: test
+  hosts: cisco
+  gather_facts: false
+
+  tasks:
+
+  - name: Render the commands for provided  configuration
+    cisco.ios.ios_command:
+      commands:
+        - configure terminal
+        - interface GigabitEthernet2
+        - traffic-shape 1000
+        - rate-limit 5000
+        - end
+
+  - name: save
+    ios_command:
+      commands:
+        - command: 'write memory'
+          prompt: '[confirm]'
+          answer: 'y'
+
+
+
+

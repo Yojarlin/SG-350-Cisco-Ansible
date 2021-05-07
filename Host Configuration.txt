@@ -1,0 +1,11 @@
+[cisco]
+172.18.1.86
+
+[cisco:vars]
+ansible_user=test
+ansible_password=test
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_become_method=enable
+ansible_become=yes
+ansible_become_password=test
